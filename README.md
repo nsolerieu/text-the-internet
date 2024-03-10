@@ -1,5 +1,5 @@
 # text-the-internet
-A single file, dependencies-free, chat UI html/css tiny-kit
+A single-file, dependencies-free, static html/css, chat UI tiny-kit
 
 <img width="1479" alt="Preview of the Chat UI kit" src="https://github.com/nsolerieu/text-the-internet/assets/10632534/f7799ae5-bc2d-4676-92d5-ce8d1ef3b6dd">
 
