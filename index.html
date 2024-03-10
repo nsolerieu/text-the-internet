@@ -10,27 +10,32 @@
 	<style type="text/css">
 		:root {
 			--font-primary: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-			--text-primary: #121212;
-			--text-secondary: #828282;
+			--text-primary: rgba(0, 0, 0, 1);
+			--text-secondary: rgba(0, 0, 0, .5);
 			--bg-primary: #ffffff;
-			--bg-secondary: #f8f8f8;
+			--bg-secondary: #f5f5f5;
+			--border: rgba(0, 0, 0, 0.1);
 			--font-size-regular: 16px;
-			--border: rgba(0,0,0,0.1);
 			--font-size-large: 20px;
 			--font-size-small: 14px;
 		}
 		:root body.dark-mode {
-			--text-primary: #ededed;
-			--text-secondary: #a0a0a0;
+			--text-primary: rgba(255, 255, 255, 1);
+			--text-secondary: rgba(255, 255, 255, .5);
 			--bg-primary: #161616;
 			--bg-secondary: #1c1c1c;
-			--border: rgba(255,255,255,0.1);
+			--border: rgba(255, 255, 255, 0.1);
 		}
 		*, *::before, *::after {
 			box-sizing: border-box;
+			list-style: none;
+			font-synthesis: none;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
 		}
 		body {
-			line-height: 1.6;
+			line-height: 1.4;
+			letter-spacing: -.03em;
 			padding: 0;
 			margin: 0;
 			scroll-behavior: smooth;
@@ -45,12 +50,16 @@
 			width: 100%;
 			margin: 20vh auto 6vh auto;
 		}
+		.message-group {
+			display: flex;
+			flex-direction: column;
+			gap: 4px;
+		}
 		.bubble {
 			border-radius: 24px;
-			padding: 8px 16px;
-			display: inline-block;
+			padding: 12px 20px;
+			width: fit-content;
 			font-size: var(--font-size-regular);
-			margin-top: 4px;
 			background: var(--bg-secondary);
 		}
 		.bubble.first {
@@ -69,20 +78,20 @@
 			overflow: hidden;
 		}
 		.avatar__name {
-			height: 24px;
-			line-height: 24px;
 			font-size: var(--font-size-small);
 			color: var(--text-secondary);
+			line-height: 24px;
 		}
 		a {
 			text-decoration: none;
-			color: #3498db;
+			color: #06c;
 		}
 		.single-image {
 			width: 70%;
 			display: block;
 			padding: 16px 0;
 			margin: 0;
+			position: relative;
 		}
 		.single-image img {
 			width: 100%;
@@ -113,9 +122,29 @@
 			top: 10px;
 			position: absolute;
 		}
+		.single-image__link {
+			position: absolute;
+			top: 45%;
+			right: -50px;
+			height: 40px;
+			width: 40px;
+			border-radius: 40px;
+			border: 1px solid var(--border);
+			text-align: center;
+			line-height: 38px;
+			transition: border ease 0.2s;
+		}
+		.single-image__link:hover {
+			border-color: #06c;
+		}
+		.interstitial {
+			font-size: var(--font-size-small);
+			color: var(--text-secondary);
+			margin: 32px 0;
+			text-align: center;
+		}
 
 	</style>
-
 
 </head>
 
@@ -127,57 +156,42 @@
 		<img src="https://avatars.githubusercontent.com/u/10632534?v=4" class="avatar__img">
 		<div class="avatar__name">Nicolas</div>
 	</div>
-	<div class="bubble first">&#128075; Hi there</div>
-	<br>
-	<div class="bubble">it's weird</div>
-	<br>
-	<div class="bubble">but hear me out...</div>
-	<br>
-	<div class="bubble">I've designed lots of conversational UI over the years</div>
-	<br>
-	<div class="bubble">mimicking mobile native UI on the web is not new. Nowadays there is a ton of ultra sophisticated frontend tools that allow you to build this, and a million other things. Dependencies, complex setup, hard to truly customize... overkill.</div>
-	<br>
-	<div class="bubble">that's why I made this tiny thing</div>
-	<br>
-	<div class="bubble">one file &#128406;</div>
-	<br>
-	<div class="bubble">just HTML and CSS</div>
-	<br>
-	<div class="bubble">Dark mode</div>
-	<br>
-	<div class="bubble">Text, emojis, links, images</div>
-	<br>
-	<figure class="single-image">
-		<img src="https://slrncl.com/assets/img/moments/201803-sf-2.jpg">
-		<figcaption>I used to love running on Ocean Beach</figcaption>
-	</figure>
-	<div class="bubble">That's it</div>
-	<br>
-	<div class="bubble">The idea is to simply tell a story like if you were texting a friend, on a webpage</div>
-	<br>
-	<div class="bubble">I think it's cool</div>
-	<br>
-	<div class="bubble">(of course it's responsive)</div>
-	<br>
-	<div class="bubble">more philosophically, I believe that most websites are just people and company trying to put their voice out there. The web has weird standards and websites are trying to seduce us. What if you told your story in this format instead. What would it look like? Would it be convincing?</div>
-	<br>
-	<div class="bubble">You can try it in 2min</div>
-	<br>
-	<div class="bubble">It's Open Source on github <a href="#">here</a></div>
-	<br>
-	<div class="bubble">Download the index.html, change the content, open in a browser...</div>
-	<br>
-	<div class="bubble">Tada &#127881;</div>
-	<br>
-	<div class="bubble">Now you can text the whole internet</div>
-	<br>
-	<div class="bubble">Remember: with great power comes great responsabilities</div>
-	<br>
-	<div class="bubble">Cheers</div>
-	<br>
-	<div class="bubble">&#129305;</div>
+	<div class="message-group">
+		<div class="bubble first">&#128075; Hi there</div>
+		<div class="bubble">it's weird but hear me out...</div>
+		<div class="bubble">I've designed lots of conversational UI over the years</div>
+		<div class="bubble">mimicking mobile native UI on the web is not new. Nowadays there is a ton of ultra sophisticated frontend tools that allow you to build this, and a million other things. Dependencies, complex setup, hard to truly customize... overkill.</div>
+	</div>
+	<div class="interstitial">3 min ago</div>
+	<div class="message-group">
+		<div class="bubble">that's why I made this tiny thing</div>
+		<div class="bubble">one file &#128406;</div>
+		<div class="bubble">just HTML and CSS</div>
+		<div class="bubble">Dark mode</div>
+		<div class="bubble">Text, emojis, links, images</div>
+		<figure class="single-image">
+			<img src="https://slrncl.com/assets/img/moments/201803-sf-2.jpg">
+			<figcaption>I used to love running on Ocean Beach</figcaption>
+			<a href="https://slrncl.com/moments/" class="single-image__link" target="_blank">&#8599;</a>
+		</figure>
+		<div class="bubble">That's it</div>
+		<div class="bubble">The idea is to simply tell a story like if you were texting a friend, on a webpage</div>
+		<div class="bubble">I think it's cool</div>
+		<div class="bubble">(of course it's responsive)</div>
+		<div class="bubble">more philosophically, I believe that most websites are just people and company trying to put their voice out there. The web has weird standards and websites are trying to seduce us. What if you told your story in this format instead. What would it look like? Would it be convincing?</div>
+		<div class="bubble">You can try it in 2min</div>
+		<div class="bubble">It's Open Source on github <a href="#">here</a></div>
+		<div class="bubble">Download the index.html, change the content, open in a browser...</div>
+		<div class="bubble">Tada &#127881;</div>
+		<div class="bubble">Now you can text the whole internet</div>
+	</div>
+	<div class="interstitial">10 sec ago</div>
+	<div class="message-group">
+		<div class="bubble">Remember: with great power comes great responsabilities</div>
+		<div class="bubble">Cheers</div>
+		<div class="bubble">&#129305;</div>
+	</div>
 </div>
-
 
 </div>
 
