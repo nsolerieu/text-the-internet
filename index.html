@@ -15,6 +15,7 @@
 			--bg-primary: #ffffff;
 			--bg-secondary: #f8f8f8;
 			--font-size-regular: 16px;
+			--border: rgba(0,0,0,0.1);
 			--font-size-large: 20px;
 			--font-size-small: 14px;
 		}
@@ -23,7 +24,7 @@
 			--text-secondary: #a0a0a0;
 			--bg-primary: #161616;
 			--bg-secondary: #1c1c1c;
-			--border: #232323;
+			--border: rgba(255,255,255,0.1);
 		}
 		*, *::before, *::after {
 			box-sizing: border-box;
@@ -77,6 +78,41 @@
 			text-decoration: none;
 			color: #3498db;
 		}
+		.single-image {
+			width: 70%;
+			display: block;
+			padding: 16px 0;
+			margin: 0;
+		}
+		.single-image img {
+			width: 100%;
+			display: block;
+			height: auto;
+			border-radius: 24px;
+			overflow: hidden;
+		}
+		.single-image figcaption {
+			width: 100%;
+			display: block;
+			margin-top: 8px;
+			font-size: var(--font-size-small);
+			color: var(--text-secondary);
+			padding-left:24px;
+			position: relative;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.single-image figcaption:before {
+			content: "";
+			height: 2px;
+			width: 16px;
+			border-radius: 2px;
+			background: var(--border);
+			left: 0;
+			top: 10px;
+			position: absolute;
+		}
 
 	</style>
 
@@ -84,50 +120,54 @@
 </head>
 
 <!-- BODY -->
-<body class="dark-mode">
+<body class="">
 
 <div class="container">
 	<div class="avatar">
 		<img src="https://avatars.githubusercontent.com/u/10632534?v=4" class="avatar__img">
 		<div class="avatar__name">Nicolas</div>
 	</div>
-	<div class="bubble first">👋 Hi there</div>
+	<div class="bubble first">&#128075; Hi there</div>
 	<br>
 	<div class="bubble">it's weird</div>
 	<br>
 	<div class="bubble">but hear me out...</div>
 	<br>
-	<div class="bubble">I found myself designing text-like chat UI for various projects</div>
+	<div class="bubble">I've designed lots of conversational UI over the years</div>
 	<br>
-	<div class="bubble">mimicking mobile native UI on the web is not new. Nowadays there is a ton of ultra sophisticated frontend tools out that allow to build this, and a million other things. Dependencies, complex setup, hard to truly customize... overkill</div>
+	<div class="bubble">mimicking mobile native UI on the web is not new. Nowadays there is a ton of ultra sophisticated frontend tools that allow you to build this, and a million other things. Dependencies, complex setup, hard to truly customize... overkill.</div>
 	<br>
 	<div class="bubble">that's why I made this tiny thing</div>
 	<br>
-	<div class="bubble">one file 🖖</div>
+	<div class="bubble">one file &#128406;</div>
 	<br>
 	<div class="bubble">just HTML and CSS</div>
 	<br>
-	<div class="bubble">Dark mode support</div>
+	<div class="bubble">Dark mode</div>
 	<br>
-	<div class="bubble">Image, Emojis, Links</div>
+	<div class="bubble">Text, emojis, links, images</div>
 	<br>
+	<figure class="single-image">
+		<img src="https://slrncl.com/assets/img/moments/201803-sf-2.jpg">
+		<figcaption>I used to love running on Ocean Beach</figcaption>
+	</figure>
 	<div class="bubble">That's it</div>
 	<br>
-	<div class="bubble">The idea is to simply tell a story like if you where texting a friend, on a webpage</div>
+	<div class="bubble">The idea is to simply tell a story like if you were texting a friend, on a webpage</div>
 	<br>
 	<div class="bubble">I think it's cool</div>
 	<br>
 	<div class="bubble">(of course it's responsive)</div>
 	<br>
-	<div class="bubble">more philosophically, I believe that most webiste are just people and company trying to put their voice out there. The web now has standard and webiste are trying to seduce us. What if you told your story in thi sformat instead. What would it look like? Would it be convincing?</div>
+	<div class="bubble">more philosophically, I believe that most websites are just people and company trying to put their voice out there. The web has weird standards and websites are trying to seduce us. What if you told your story in this format instead. What would it look like? Would it be convincing?</div>
 	<br>
 	<div class="bubble">You can try it in 2min</div>
 	<br>
 	<div class="bubble">It's Open Source on github <a href="#">here</a></div>
 	<br>
-	<div class="bubble">Download teh index.html, change the content, open in a browser...</div>
+	<div class="bubble">Download the index.html, change the content, open in a browser...</div>
 	<br>
-	<div class="bubble">Tada 🎉</div>
+	<div class="bubble">Tada &#127881;</div>
 	<br>
 	<div class="bubble">Now you can text the whole internet</div>
 	<br>
@@ -135,7 +175,7 @@
 	<br>
 	<div class="bubble">Cheers</div>
 	<br>
-	<div class="bubble">🥂</div>
+	<div class="bubble">&#129305;</div>
 </div>
 
 
