@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title>Chat UI kit</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<style type="text/css">
+		:root {
+			--font-primary: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+			--text-primary: #121212;
+			--text-secondary: #828282;
+			--bg-primary: #ffffff;
+			--bg-secondary: #f8f8f8;
+			--font-size-regular: 16px;
+			--font-size-large: 20px;
+			--font-size-small: 14px;
+		}
+		:root body.dark-mode {
+			--text-primary: #ededed;
+			--text-secondary: #a0a0a0;
+			--bg-primary: #161616;
+			--bg-secondary: #1c1c1c;
+			--border: #232323;
+		}
+		*, *::before, *::after {
+			box-sizing: border-box;
+		}
+		body {
+			line-height: 1.6;
+			padding: 0;
+			margin: 0;
+			scroll-behavior: smooth;
+			-webkit-text-size-adjust: 100%;
+			font-family: var(--font-primary);
+			background: var(--bg-primary);
+			color: var(--text-primary);
+		}
+		.container {
+			max-width: 460px;
+			padding: 0 20px;
+			width: 100%;
+			margin: 20vh auto 6vh auto;
+		}
+		.bubble {
+			border-radius: 24px;
+			padding: 8px 16px;
+			display: inline-block;
+			font-size: var(--font-size-regular);
+			margin-top: 4px;
+			background: var(--bg-secondary);
+		}
+		.bubble.first {
+			border-top-left-radius: 0;
+		}
+		.avatar {
+			display: flex;
+			gap: 10px;
+			align-items; center;
+			margin: 10px 0;
+		}
+		.avatar__img {
+			height: 24px;
+			width: 24px;
+			border-radius: 24px;
+			overflow: hidden;
+		}
+		.avatar__name {
+			height: 24px;
+			line-height: 24px;
+			font-size: var(--font-size-small);
+			color: var(--text-secondary);
+		}
+		a {
+			text-decoration: none;
+			color: #3498db;
+		}
+
+	</style>
+
+
+</head>
+
+<!-- BODY -->
+<body class="dark-mode">
+
+<div class="container">
+	<div class="avatar">
+		<img src="https://avatars.githubusercontent.com/u/10632534?v=4" class="avatar__img">
+		<div class="avatar__name">Nicolas</div>
+	</div>
+	<div class="bubble first">👋 Hi there</div>
+	<br>
+	<div class="bubble">it's weird</div>
+	<br>
+	<div class="bubble">but hear me out...</div>
+	<br>
+	<div class="bubble">I found myself designing text-like chat UI for various projects</div>
+	<br>
+	<div class="bubble">mimicking mobile native UI on the web is not new. Nowadays there is a ton of ultra sophisticated frontend tools out that allow to build this, and a million other things. Dependencies, complex setup, hard to truly customize... overkill</div>
+	<br>
+	<div class="bubble">that's why I made this tiny thing</div>
+	<br>
+	<div class="bubble">one file 🖖</div>
+	<br>
+	<div class="bubble">just HTML and CSS</div>
+	<br>
+	<div class="bubble">Dark mode support</div>
+	<br>
+	<div class="bubble">Image, Emojis, Links</div>
+	<br>
+	<div class="bubble">That's it</div>
+	<br>
+	<div class="bubble">The idea is to simply tell a story like if you where texting a friend, on a webpage</div>
+	<br>
+	<div class="bubble">I think it's cool</div>
+	<br>
+	<div class="bubble">(of course it's responsive)</div>
+	<br>
+	<div class="bubble">more philosophically, I believe that most webiste are just people and company trying to put their voice out there. The web now has standard and webiste are trying to seduce us. What if you told your story in thi sformat instead. What would it look like? Would it be convincing?</div>
+	<br>
+	<div class="bubble">You can try it in 2min</div>
+	<br>
+	<div class="bubble">It's Open Source on github <a href="#">here</a></div>
+	<br>
+	<div class="bubble">Download teh index.html, change the content, open in a browser...</div>
+	<br>
+	<div class="bubble">Tada 🎉</div>
+	<br>
+	<div class="bubble">Now you can text the whole internet</div>
+	<br>
+	<div class="bubble">Remember: with great power comes great responsabilities</div>
+	<br>
+	<div class="bubble">Cheers</div>
+	<br>
+	<div class="bubble">🥂</div>
+</div>
+
+
+</div>
+
+</body>
