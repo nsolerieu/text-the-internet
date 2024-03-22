@@ -61,6 +61,8 @@
 			width: fit-content;
 			font-size: var(--font-size-regular);
 			background: var(--bg-secondary);
+			opacity: 0;
+			transition: opacity 1s ease;
 		}
 		.bubble:first-of-type {
 			border-top-left-radius: 0;
@@ -92,6 +94,8 @@
 			padding: 16px 0;
 			margin: 0;
 			position: relative;
+			opacity: 0;
+			transition: opacity 1s ease;
 		}
 		.single-image img {
 			width: 100%;
@@ -142,6 +146,12 @@
 			color: var(--text-secondary);
 			margin: 32px 0;
 			text-align: center;
+			opacity: 0;
+			transition: opacity 1s ease;
+
+		}
+		.visible {
+			opacity: 1;
 		}
 
 	</style>
@@ -170,20 +180,22 @@
 		<div class="bubble">Dark mode</div>
 		<div class="bubble">Text, emojis, links, images</div>
 		<figure class="single-image">
-			<img src="https://slrncl.com/assets/img/moments/201803-sf-2.jpg">
+			<img src="https://slrncl.com/moments/photos/201803-sf-2.jpg">
 			<figcaption>I used to love running on Ocean Beach</figcaption>
 			<a href="https://slrncl.com/moments/" class="single-image__link" target="_blank">&#8599;</a>
 		</figure>
+		<div class="bubble">it even has a scroll reveal effect</div>
 		<div class="bubble">That's it</div>
 		<div class="bubble">The idea is to simply tell a story like if you were texting a friend, on a webpage</div>
 		<div class="bubble">I think it's cool</div>
 		<div class="bubble">(of course it's responsive)</div>
 		<div class="bubble">more philosophically, I believe that most websites are just people and company trying to put their voice out there. The web has weird standards and websites are trying to seduce us. What if you told your story in this format instead. What would it look like? Would it be convincing?</div>
 		<div class="bubble">You can try it in 2min</div>
-		<div class="bubble">It's Open Source on github <a href="#">here</a></div>
+		<div class="bubble">there is something to this format, it's familiar and creates an instictive kind of storytelling, like a text thread</div>
+		<div class="bubble">Now you can text the whole internet</div>
+		<div class="bubble">It's Open Source <a href="https://github.com/nsolerieu/text-the-internet">on github</a></div>
 		<div class="bubble">Download the index.html, change the content, open in a browser...</div>
 		<div class="bubble">Tada &#127881;</div>
-		<div class="bubble">Now you can text the whole internet</div>
 	</div>
 	<div class="interstitial">10 sec ago</div>
 	<div class="message-group">
@@ -196,3 +208,20 @@
 </div>
 
 </body>
+
+<script type="text/javascript">
+const targets = document.querySelectorAll('.bubble, .interstitial, .single-image');
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("visible", entry.isIntersecting)
+    })
+  },
+  { threshold: .2}
+);
+
+targets.forEach( target => {
+  observer.observe(target)
+});
+</script>
