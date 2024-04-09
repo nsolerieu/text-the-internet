@@ -16,4 +16,4 @@ A single-file, dependencies-free, static html/css, chat UI tiny-kit
 
 ----
 
-→ See humble [Demo](https://slrncl.com/dev/text-the-internet/) 
+→ View [Demo](https://nsolerieu.github.io/text-the-internet/) 
